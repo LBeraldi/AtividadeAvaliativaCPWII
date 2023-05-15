@@ -48,13 +48,14 @@ function openModal() {
 
         }
 
+        //funcao para criar um alerta caso os campos obrigatórios não forem preenchidos
         contatos.addEventListener('submit', function(event) {
             // Verifique se todos os campos obrigatórios estão preenchidos
-            const requiredFields = document.querySelectorAll('[required]');
+            const required = document.querySelectorAll('[required]');
             let teste = true;
           
-            for (let i = 0; i < requiredFields.length; i++) {
-              if (requiredFields[i].value === '') {
+            for (let i = 0; i < required.length; i++) {
+              if (required[i].value === '') {
                 teste = false;
                 break;
               }
