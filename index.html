@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="Script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://yt3.googleusercontent.com/ytc/AGIKgqM8eCUY3BCIi06KZK8QsovtarcraDi_vukFCyy_ag=s900-c-k-c0x00ffffff-no-rj">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="https://yt3.googleusercontent.com/ytc/AGIKgqM8eCUY3BCIi06KZK8QsovtarcraDi_vukFCyy_ag=s900-c-k-c0x00ffffff-no-rj"
+    />
     <title>Atividade avaliativa</title>
-</head>
-<header>
-<!--Menu superior (NavBar)-->
-<nav>
-    <ul>
-      <li><a href="#">Meus contatos</a></li>
-      <li><a href="#">Filmes</a></li>
-      <li><a href="#">Eventos</a></li>
-    </ul>
-  </nav>
-  
-</header>
-<body>
+  </head>
+  <header>
+    <!--Menu superior (NavBar)-->
+    <nav>
+      <ul>
+        <li><a href="#">Meus contatos</a></li>
+        <li><a href="#">Filmes</a></li>
+        <li><a href="#">Eventos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body>
     <h2 id="titulo">Meus contatos</h2>
 
-<!--Implementação no HTML para criar uma caixa de dialogo (Modal)-->
+    <!--Implementação no HTML para criar uma caixa de dialogo (Modal)-->
     <div id="botaoPrincipal"><button onclick="openModal()  ">Novo</button></div>
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
 
-<!--Imput para receber os valores-->
-    <div id="input">
-      <label for="Nome">Nome</label>
-      <input class="entrada" nome="nome" id="campoNome" required>
-      <br>
-      <label for="email">E-mail</label>
-      <input class="entrada" nome="email" id="campoEmail" required>
-      <br>
-      <button type="submit" onclick="adicionar()">Salvar</button>
+        <!--Imput para receber os valores-->
+        <form onsubmit="adicionar(event)" method="post">
+          <div id="input">
+            <label for="Nome">Nome</label>
+            <input
+              type="texte"
+              class="entrada"
+              name="nome"
+              id="campoNome"
+              required
+            />
+            <br />
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              class="entrada"
+              name="email"
+              id="campoEmail"
+              required
+            />
+            <br />
+            <button type="submit">Salvar</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-  </div>
-</div>
-
-<!--Apresentação dos valores digitados na caida de dialogo-->
-<table >
-    <thead>
+    <!--Apresentação dos valores digitados na caida de dialogo-->
+    <table>
+      <thead>
         <th>Nome</th>
         <th>E-mail</th>
         <th>Ações</th>
-    </thead>    
-    <tbody id="corpoTabela">
-    </tbody>
-</table>
-
-</body>
-<footer>
-
-</footer>
+      </thead>
+      <tbody id="corpoTabela"></tbody>
+    </table>
+  </body>
+  <footer></footer>
 </html>
