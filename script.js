@@ -16,13 +16,27 @@ function openModal() {
             nome:document.getElementById("campoNome").value,
             email:document.getElementById("campoEmail").value
          }
+
+         let nome = document.getElementById("campoNome").value.trim();
+         let email = document.getElementById("campoEmail").value.trim();
+
          contatos.push(novoContato)
          document.getElementById("campoNome").value = "";
          document.getElementById("campoEmail").value = "";
-         
-         //É necessario incluir as funções para fechar a caixa de dialogo, e para carregar a tabela no HTML
+
+         if (email ==='' || nome ===''){
+
+          alert('preencha todos os campos')
+          remover();
+
+         }else{
+
          closeModal();
-         carregarTabela(); 
+         carregarTabela();
+
+         }
+         //É necessario incluir as funções para fechar a caixa de dialogo, e para carregar a tabela no HTML
+          
         }
         
 //Função que carrega a tabela no HTML        
@@ -48,22 +62,3 @@ function openModal() {
 
         }
 
-        //funcao para criar um alerta caso os campos obrigatórios não forem preenchidos
-        contatos.addEventListener('submit', function(event) {
-            // Verifique se todos os campos obrigatórios estão preenchidos
-            const required = document.querySelectorAll('[required]');
-            let teste = true;
-          
-            for (let i = 0; i < required.length; i++) {
-              if (required[i].value === '') {
-                teste = false;
-                break;
-              }
-            }
-          
-            // Se algum campo obrigatório estiver vazio, exiba um alerta
-            if (!teste) {
-              alert('Por favor, preencha todos os campos obrigatórios.');
-              event.preventDefault();
-            }
-          });
